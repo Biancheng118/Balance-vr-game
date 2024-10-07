@@ -39,7 +39,7 @@ The game's theme is **"The Art of Balance"**, where players explore balancing ph
 1. **Prerequisites**: Make sure you have Unity installed (tested with version 2020.x or later) and the `XR Interaction Toolkit` package.
 2. **Clone the Repository**: Clone the repository from GitHub:
     ```bash
-    git clone [GitHub Repo URL]
+    git clone [[GitHub Repo URL](https://github.com/Biancheng118/Balance-vr-game.git)]
     ```
 3. **Open in Unity**: Open the project in Unity Hub, and ensure all assets and packages are installed.
 4. **Play the Game**:
