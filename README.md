@@ -3,6 +3,15 @@
 ## Project Overview
 **Balance Beam Challenge** is a VR game where players interact with different-sized cubes to balance a seesaw (balance beam). The goal is to place the cubes on the balance beam and maintain balance without letting the beam tip over. The game includes intuitive interactions like grabbing, dragging, and placing objects, as well as a "Restart" button to reset the game when needed.
 
+## Video Demonstration
+
+Watch the video demonstration of the game on YouTube:
+
+[![Balance Beam Challenge Video](https://img.youtube.com/vi/OwcDh_yuzyQ/0.jpg)](https://youtu.be/OwcDh_yuzyQ)
+
+Or click [here to watch on YouTube](https://youtu.be/OwcDh_yuzyQ).
+
+
 ## Table of Contents
 1. [Gameplay](#gameplay)
 2. [Interactable Elements](#interactable-elements)
