@@ -60,21 +60,29 @@ The game's theme is **"The Art of Balance"**, where players explore balancing ph
 ### Restart Button Functionality
 - **UI Button Setup**: A `RestartGame` script is attached to the button to handle scene reloading:
     ```csharp
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEngine;
 
-    public class RestartGame : MonoBehaviour
+/// <summary>
+/// Load scene using name, or reload the active scene
+/// </summary>
+public class LoadScene : MonoBehaviour
+{
+    public void LoadSceneUsingName(string sceneName)
     {
-        public void RestartScene()
-        {
-            // Get the active scene
-            Scene currentScene = SceneManager.GetActiveScene();
-            // Reload the active scene
-            SceneManager.LoadScene(currentScene.name);
-        }
+        SceneManager.LoadScene(sceneName);
     }
+
+    public void ReloadCurrentScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+}
+
     ```
-- **Button Interaction**: The `On Click ()` event of the button is configured to call `RestartScene()` in the `RestartGame` script to reset the scene.
+- **Button Interaction**: The `On Click ()` event of the button is configured to call `LoadScene()` in the `LoadScene` script to reset the scene.
 
 ## Project Structure
 - **Assets**: Contains all game assets, including prefabs for the balance beam, cubes, and the restart button.
