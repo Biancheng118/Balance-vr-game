@@ -58,31 +58,47 @@ The game's theme is **"The Art of Balance"**, where players explore balancing ph
 - **Implementation**: Using `XR Ray Interactor`, the color is temporarily changed when the object is hovered over and reset when the hover ends.
 
 ### Restart Button Functionality
-- **UI Button Setup**: A `RestartGame` script is attached to the button to handle scene reloading:
+- **UI Button Setup**: A `RestartGame` script is attached to the button to handle scene reloading.
+- **Code Details**: Below is the `LoadScene.cs` script, which provides two key functionalities: loading a scene by its name and reloading the current scene.
+
     ```csharp
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine.SceneManagement;
+    using UnityEngine;
 
-/// <summary>
-/// Load scene using name, or reload the active scene
-/// </summary>
-public class LoadScene : MonoBehaviour
-{
-    public void LoadSceneUsingName(string sceneName)
+    /// <summary>
+    /// This class provides methods for loading scenes.
+    /// It can either load a specific scene by its name
+    /// or reload the currently active scene.
+    /// </summary>
+    public class LoadScene : MonoBehaviour
     {
-        SceneManager.LoadScene(sceneName);
-    }
+        /// <summary>
+        /// Loads a new scene based on the scene's name.
+        /// </summary>
+        /// <param name="sceneName">The name of the scene to be loaded.</param>
+        public void LoadSceneUsingName(string sceneName)
+        {
+            SceneManager.LoadScene(sceneName);
+        }
 
-    public void ReloadCurrentScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        /// <summary>
+        /// Reloads the currently active scene.
+        /// </summary>
+        public void ReloadCurrentScene()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
-}
-
     ```
-- **Button Interaction**: The `On Click ()` event of the button is configured to call `LoadScene()` in the `LoadScene` script to reset the scene.
+
+- **Explanation**:
+   - `LoadSceneUsingName(string sceneName)`: Loads a new scene based on its name, which is passed as a parameter. This is useful for changing scenes during gameplay.
+   - `ReloadCurrentScene()`: Reloads the currently active scene. This function is ideal for restarting the game or resetting the current scene's state.
+
+- **Button Interaction**: The `On Click ()` event of the button is configured to call either `LoadSceneUsingName()` or `ReloadCurrentScene()` in the `LoadScene` script to navigate between scenes or reset the game.
+
 
 ## Project Structure
 - **Assets**: Contains all game assets, including prefabs for the balance beam, cubes, and the restart button.
